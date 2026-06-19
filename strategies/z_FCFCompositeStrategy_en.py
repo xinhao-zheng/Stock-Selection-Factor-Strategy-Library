@@ -1,11 +1,9 @@
 """
 Stock Quant Strategy Framework
 ---------------------------------------------------
-Author:    PiggyLa
+Author:    Xinhao Zheng
 Contact:   Veritas428 (WeChat)
-Copyright: (c) 2026 PiggyLa. All rights reserved.
-
-Proprietary & Confidential. Do not distribute.
+Copyright: (c) 2026 Xinhao Zheng. Licensed under the MIT License.
 ---------------------------------------------------
 """
 import pandas as pd
@@ -40,7 +38,7 @@ STG_INTRO = {
         original: Do not apply industry neutralization
         neutralized: Apply industry neutralization
     """,
-    'Use Case-1':
+    'Use Case-1 (Base: Pure FCFFEV Selection)':
         {
             'name': 'z_FCFCompositeStrategy_en',
             'hold_period': 'W',

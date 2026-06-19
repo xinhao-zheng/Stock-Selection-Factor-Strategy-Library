@@ -1,11 +1,9 @@
 """
 Stock Quant Strategy Framework
 ---------------------------------------------------
-Author:    PiggyLa
+Author:    Xinhao Zheng
 Contact:   Veritas428 (WeChat)
-Copyright: (c) 2026 PiggyLa. All rights reserved.
-
-Proprietary & Confidential. Do not distribute.
+Copyright: (c) 2026 Xinhao Zheng. Licensed under the MIT License.
 ---------------------------------------------------
 """
 import pandas as pd
@@ -34,7 +32,7 @@ def add_factor(df: pd.DataFrame, param=None, **kwargs) -> pd.DataFrame:
     Notes:
     - If factor calculation involves financial data, relevant data can be provided via the `fin_data` parameter.
 
-    Current Dividend Yield Factor (z_DividendYield)
+    Current Dividend Yield Factor
     ---------------------------------------------------
     Meaning: Real-time dividend yield based on the current closing price.
     Principle: Computed by data_bridge as TTM dividends per share / daily closing price.

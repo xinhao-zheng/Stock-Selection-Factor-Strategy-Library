@@ -1,11 +1,9 @@
 """
 Stock Quant Strategy Framework
 ---------------------------------------------------
-Author:    PiggyLa
+Author:    Xinhao Zheng
 Contact:   Veritas428 (WeChat)
-Copyright: (c) 2026 PiggyLa. All rights reserved.
-
-Proprietary & Confidential. Do not distribute.
+Copyright: (c) 2026 Xinhao Zheng. Licensed under the MIT License.
 ---------------------------------------------------
 """
 import pandas as pd
@@ -38,7 +36,7 @@ def add_factor(df: pd.DataFrame, param=None, **kwargs) -> pd.DataFrame:
     Notes:
     - If factor calculation involves financial data, relevant data can be provided via the `fin_data` parameter.
 
-    Dividend Value Factor (z_DividendValue)
+    Dividend Value Factor
     ---------------------------------------------------
     Meaning: The dividend analog of FCFFEV. Measures dividend yield per unit of
          Enterprise Value, adjusted for capital structure.
@@ -46,8 +44,8 @@ def add_factor(df: pd.DataFrame, param=None, **kwargs) -> pd.DataFrame:
          - Current Dividend Yield: How much dividend relative to today's price.
          - Market Cap / EV: Leverage adjustment (< 1 for leveraged firms, penalizing them).
          Larger values indicate generous dividends at a cheap whole-firm price.
-         Dividend stability is ensured by filters (z_ConsecutiveDividendYears or
-         z_DividendQuality), not by discounting the factor value.
+         Dividend stability is ensured by filters (z_ConsecutiveDividendYears_en or
+         z_DividendQuality_en), not by discounting the factor value.
 
     Formula: DivYield_Latest x (MarketCap / EV)
       DivYield_Latest = TTM Dividend / Daily Close (updated daily by data_bridge)

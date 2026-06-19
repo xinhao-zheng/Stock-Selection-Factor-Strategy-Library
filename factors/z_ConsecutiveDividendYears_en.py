@@ -1,11 +1,9 @@
 """
 Stock Quant Strategy Framework
 ---------------------------------------------------
-Author:    PiggyLa
+Author:    Xinhao Zheng
 Contact:   Veritas428 (WeChat)
-Copyright: (c) 2026 PiggyLa. All rights reserved.
-
-Proprietary & Confidential. Do not distribute.
+Copyright: (c) 2026 Xinhao Zheng. Licensed under the MIT License.
 ---------------------------------------------------
 """
 import pandas as pd
@@ -34,7 +32,7 @@ def add_factor(df: pd.DataFrame, param=None, **kwargs) -> pd.DataFrame:
     Notes:
     - If factor calculation involves financial data, relevant data can be provided via the `fin_data` parameter.
 
-    Consecutive Dividend Years Factor (z_ConsecutiveDividendYears)
+    Consecutive Dividend Years Factor
     ---------------------------------------------------
     Meaning: Passthrough of the consecutive dividend years computed by data_bridge.
          Counts the number of uninterrupted years with dividend payments,

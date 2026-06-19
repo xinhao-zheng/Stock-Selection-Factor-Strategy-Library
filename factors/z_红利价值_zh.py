@@ -1,11 +1,9 @@
 """
 Stock Quant Strategy Framework
 ---------------------------------------------------
-Author:    PiggyLa
+Author:    Xinhao Zheng
 Contact:   Veritas428 (WeChat)
-Copyright: (c) 2026 PiggyLa. All rights reserved.
-
-Proprietary & Confidential. Do not distribute.
+Copyright: (c) 2026 Xinhao Zheng. Licensed under the MIT License.
 ---------------------------------------------------
 """
 import pandas as pd
@@ -45,7 +43,7 @@ def add_factor(df: pd.DataFrame, param=None, **kwargs) -> pd.DataFrame:
          - 当前股息率（分红率_最近日）：分红多不多、当前价格贵不贵
          - 总市值/EV：资本结构调整（高杠杆公司该比值 < 1，被打折）
          因子值越大，说明公司分红慷慨且整体标价便宜。
-         分红稳定性由过滤条件（z_连续分红年份 或 z_分红质量）保障，不在因子内做折扣。
+         分红稳定性由过滤条件（z_连续分红年份_zh 或 z_分红质量_zh）保障，不在因子内做折扣。
 
     公式: 分红率_最近日 × (总市值 / EV)
       分红率_最近日 = 近一年分红(TTM) / 当日收盘价（data_bridge 每日更新）

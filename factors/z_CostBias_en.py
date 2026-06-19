@@ -1,11 +1,9 @@
 """
 Stock Quant Strategy Framework
 ---------------------------------------------------
-Author:    PiggyLa
+Author:    Xinhao Zheng
 Contact:   Veritas428 (WeChat)
-Copyright: (c) 2026 PiggyLa. All rights reserved.
-
-Proprietary & Confidential. Do not distribute.
+Copyright: (c) 2026 Xinhao Zheng. Licensed under the MIT License.
 ---------------------------------------------------
 """
 import pandas as pd
@@ -33,7 +31,7 @@ def add_factor(df: pd.DataFrame, param=None, **kwargs) -> pd.DataFrame:
     Notes:
     - If factor calculation involves financial data, relevant data can be provided via the `fin_data` parameter.
 
-    VWAP Bias Factor (z_CostBias)
+    VWAP Bias Factor
     ---------------------------------------------------
     Meaning: Measures the deviation of the current price from the recent market average holding cost (VWAP).
     Principle: VWAP represents the average cost of market participants.

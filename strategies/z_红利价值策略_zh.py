@@ -1,11 +1,9 @@
 """
 Stock Quant Strategy Framework
 ---------------------------------------------------
-Author:    PiggyLa
+Author:    Xinhao Zheng
 Contact:   Veritas428 (WeChat)
-Copyright: (c) 2026 PiggyLa. All rights reserved.
-
-Proprietary & Confidential. Do not distribute.
+Copyright: (c) 2026 Xinhao Zheng. Licensed under the MIT License.
 ---------------------------------------------------
 """
 import pandas as pd
@@ -19,13 +17,13 @@ STG_INTRO = {
     '相关船队': [],
     '策略说明': """
     红利版的 FCFFEV 策略，遵循通用价值模板「因子A: X/价格 + 因子B: 验证X」。
-    - 因子A（z_红利价值）：分红÷EV，衡量分红相对于企业真实标价是否便宜
-    - 因子B（z_FCF覆盖度）：自由现金流÷分红总额，验证分红是否可持续
+    - 因子A（z_红利价值_zh）：分红÷EV，衡量分红相对于企业真实标价是否便宜
+    - 因子B（z_FCF覆盖度_zh）：自由现金流÷分红总额，验证分红是否可持续
     两个因子等权排名，一个管「值不值得买」，一个管「撑不撑得住」。
 
     factor_list 中:
-        - z_红利价值 和 一级行业: 必选
-        - z_FCF覆盖度: 推荐（质量验证因子，替代原版分红策略中的归母净利润同比）
+        - z_红利价值_zh 和 一级行业: 必选
+        - z_FCF覆盖度_zh: 推荐（质量验证因子，替代原版分红策略中的归母净利润同比）
         - 其余因子: 辅助排名因子，args 为权重（1=与核心因子等权, 0.5=半权）
         - 复合因子 = 核心因子排名×1 + Σ(辅助因子排名×权重)，排名越小=越优
 

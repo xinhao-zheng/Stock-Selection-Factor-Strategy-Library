@@ -1,11 +1,9 @@
 """
 Stock Quant Strategy Framework
 ---------------------------------------------------
-Author:    PiggyLa
+Author:    Xinhao Zheng
 Contact:   Veritas428 (WeChat)
-Copyright: (c) 2026 PiggyLa. All rights reserved.
-
-Proprietary & Confidential. Do not distribute.
+Copyright: (c) 2026 Xinhao Zheng. Licensed under the MIT License.
 ---------------------------------------------------
 """
 import pandas as pd
@@ -20,13 +18,13 @@ STG_INTRO = {
     'Strategy Description': """
     The dividend analog of the FCFFEV strategy, following the universal value
     template: Factor A (X/Price) + Factor B (Verify X).
-    - Factor A (z_DividendValue): Dividend/EV — is the dividend cheap?
-    - Factor B (z_FCFDividendCoverage): FCF/Dividends — is the dividend sustainable?
+    - Factor A (z_DividendValue_en): Dividend/EV — is the dividend cheap?
+    - Factor B (z_FCFDividendCoverage_en): FCF/Dividends — is the dividend sustainable?
     Both factors are equally weighted; one measures value, the other quality.
 
     In factor_list:
-        - z_DividendValue and Primary Industry: Mandatory
-        - z_FCFDividendCoverage: Recommended (quality factor, replaces profit growth used in legacy dividend strategy)
+        - z_DividendValue_en and Primary Industry: Mandatory
+        - z_FCFDividendCoverage_en: Recommended (quality factor, replaces profit growth used in legacy dividend strategy)
         - Other factors: Auxiliary ranking factors, where args = weight (1 = equal weight, 0.5 = half weight)
         - Composite Factor = Core Rank * 1 + Σ(Auxiliary Factor Rank * Weight), smaller rank = better
 
