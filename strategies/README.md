@@ -1,0 +1,47 @@
+# Strategy Library · 策略库
+
+A strategy is a configurable template that turns factor scores into a portfolio: it combines several factors into one composite ranking, then narrows the result with hard filters. The logic is fixed — the factors, weights, holding period, and filters are configuration.
+
+策略是可配置模板，把因子分值转成持仓：它将若干因子合成一个复合排名，再用硬过滤收窄结果。逻辑固定——因子、权重、持仓周期与过滤皆为配置。
+
+Each strategy ships in two editions of identical logic: the Chinese edition `z_中文名策略_zh.py` and the English edition `z_EnglishNameStrategy_en.py`.
+
+每个策略提供逻辑相同的两个版本：中文版 `z_中文名策略_zh.py` 与英文版 `z_EnglishNameStrategy_en.py`。
+
+## Interface · 接口约定
+
+```python
+import pandas as pd
+
+STG_INTRO = {
+    '策略说明': '...',                        # what it does and how to configure it
+    '使用案例-1': {
+        'name': '...',
+        'hold_period': 'W',                   # rebalance cadence
+        'select_num': 5,                      # number of names held
+        'factor_list': [(factor, ascending, param, weight), ...],
+        'filter_list': [(factor, param, rule, ascending), ...],
+    },
+}
+
+def calc_select_factor(df: pd.DataFrame, strategy) -> pd.DataFrame:
+    # rank factors → weight into a composite → filter → return the kept rows
+    ...
+```
+
+- **`factor_list`** — `(name, ascending, param, weight)`. The first non-industry entry is the core factor; the rest are auxiliaries.
+- **`filter_list`** — `(name, param, rule, ascending)`, where `rule` is a threshold such as `val:>=1` or `pct:<=0.5`.
+- **Composite** — `composite = core_rank + Σ(aux_rank × weight)`, smaller is better. Ranks carry no unit, so factors on different scales combine without normalization.
+- **Industry control** — a list weight on the core factor (e.g. `[3,2,1]`) imposes a per-industry quota; `neutralized` on the industry entry ranks within industry rather than across the whole market.
+
+- **`factor_list`** —— `(名称, 升序, 参数, 权重)`。第一个非行业项为核心因子，其余为辅助因子。
+- **`filter_list`** —— `(名称, 参数, 规则, 升序)`，`规则` 为阈值，如 `val:>=1` 或 `pct:<=0.5`。
+- **复合** —— `复合 = 核心排名 + Σ(辅助排名 × 权重)`，越小越优。排名无量纲，故不同量纲的因子无需标准化即可合成。
+- **行业控制** —— 核心因子权重设为列表（如 `[3,2,1]`）即施加分行业配额；行业项设为 `neutralized` 则在行业内排名而非全市场排名。
+
+A strategy composes scores the framework has already computed; it does not recompute raw signals. Each file's `STG_INTRO` is its specification.
+
+策略组合的是框架已算好的分值，不重新计算原始信号。每个文件的 `STG_INTRO` 即其规格。
+
+---
+*MIT*
