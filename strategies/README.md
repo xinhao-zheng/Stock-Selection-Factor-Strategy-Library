@@ -4,9 +4,9 @@ A strategy is a configurable template that turns factor scores into a portfolio:
 
 策略是可配置模板，把因子分值转成持仓：它将若干因子合成一个复合排名，再用硬过滤收窄结果。逻辑固定——因子、权重、持仓周期与过滤皆为配置。
 
-Each strategy ships in two editions of identical logic: the Chinese edition `z_中文名策略_zh.py` and the English edition `z_EnglishNameStrategy_en.py`.
+Each strategy ships in two editions of identical logic: the English edition `z_EnglishNameStrategy_en.py` and the Chinese edition `z_中文名策略_zh.py`.
 
-每个策略提供逻辑相同的两个版本：中文版 `z_中文名策略_zh.py` 与英文版 `z_EnglishNameStrategy_en.py`。
+每个策略提供逻辑相同的两个版本：英文版 `z_EnglishNameStrategy_en.py` 与中文版 `z_中文名策略_zh.py`。
 
 ## Interface · 接口约定
 

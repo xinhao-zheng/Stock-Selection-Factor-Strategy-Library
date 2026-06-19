@@ -14,9 +14,9 @@ A library of plug-in factors and strategies for a stock-selection framework. Fac
 └── LICENSE
 ```
 
-Every module ships in two editions of identical logic: a Chinese edition `z_中文名_zh.py` and an English edition `z_EnglishName_en.py`. The host resolves a module by its filename — the file is the identifier.
+Every module ships in two editions of identical logic: an English edition `z_EnglishName_en.py` and a Chinese edition `z_中文名_zh.py`. The host resolves a module by its filename — the file is the identifier.
 
-每个模块提供逻辑相同的两个版本：中文版 `z_中文名_zh.py` 与英文版 `z_EnglishName_en.py`。宿主按文件名解析模块——文件名即标识。
+每个模块提供逻辑相同的两个版本：英文版 `z_EnglishName_en.py` 与中文版 `z_中文名_zh.py`。宿主按文件名解析模块——文件名即标识。
 
 Dependencies: `pandas`, `numpy`.
 

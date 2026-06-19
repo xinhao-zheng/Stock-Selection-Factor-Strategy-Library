@@ -4,9 +4,9 @@ A factor is a self-contained module that maps one stock's history to a single co
 
 因子是一个自包含模块，把单只股票的历史映射为一列——供下游排序与过滤使用的分值。模块彼此独立：新增一个文件，框架即按文件名发现它，无需更新注册表，也无需继承基类。
 
-Each factor ships in two editions of identical computation: the Chinese edition `z_中文名_zh.py` and the English edition `z_EnglishName_en.py` — the same logic documented twice, not two implementations.
+Each factor ships in two editions of identical computation: the English edition `z_EnglishName_en.py` and the Chinese edition `z_中文名_zh.py` — the same logic documented twice, not two implementations.
 
-每个因子提供计算完全相同的两个版本：中文版 `z_中文名_zh.py` 与英文版 `z_EnglishName_en.py`——同一逻辑的双语文档，而非两套实现。
+每个因子提供计算完全相同的两个版本：英文版 `z_EnglishName_en.py` 与中文版 `z_中文名_zh.py`——同一逻辑的双语文档，而非两套实现。
 
 ## Interface · 接口约定
 
